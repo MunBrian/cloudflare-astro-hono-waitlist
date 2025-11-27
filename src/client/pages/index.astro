@@ -1,11 +1,35 @@
 ---
-import Hello from "../components/Hello.astro";
 import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import SignUp from "../components/SignUp";
+import Card from "../components/Card.astro";
+import ServerStatus from "../components/ServerStatus";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-  <Hello />
+  <Hero />
+  <div class="flex justify-center p-4">
+    <SignUp />
+  </div>
+  <ServerStatus client:load />
+
+  <div
+    class="space-y-6 px-2 py-4 md:flex md:justify-center md:gap-4 md:space-y-0"
+  >
+    <Card
+      title="Interactive"
+      description="Hands on participate in interactive session by learning and buidling projects"
+    />
+    <Card
+      title="Community"
+      description="We are all about commnunity and support. Build and make connection with your peers"
+    />
+    <Card
+      title="Job Ready"
+      description="We share job tips to ensure you are ready for cloudflare jobs anywhere in the world"
+    />
+  </div>
 </Layout>
