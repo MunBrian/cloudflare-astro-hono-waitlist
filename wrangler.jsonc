@@ -2,4 +2,22 @@
   "name": "cloudflare-astro-hono-waitlist",
   "main": "src/server/index.ts",
   "compatibility_date": "2025-11-22",
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSESTS"
+  },
+  "env": {
+    "staging": {
+      "vars": {
+        "ENVIRONMENT": "staging",
+        "CF_ACCESS_DOMAIN": "https://bryanmungai254.cloudflareaccess.com",
+        "POLICY_AUD": "c0438e5bc62d909fe7cb6f3461278ba1c85f95e4f7c5ab84db8ddab90cc9c05a"
+      }
+    },
+    "production": {
+      "vars": {
+        "ENVIRONMENT": "production"
+      }
+    }
+  }
 }
