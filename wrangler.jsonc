@@ -1,23 +1,37 @@
 {
-  "name": "cloudflare-astro-hono-waitlist",
-  "main": "src/server/index.ts",
-  "compatibility_date": "2025-11-22",
-  "assets": {
-    "directory": "./dist",
-    "binding": "ASSESTS"
-  },
-  "env": {
-    "staging": {
-      "vars": {
-        "ENVIRONMENT": "staging",
-        "CF_ACCESS_DOMAIN": "https://bryanmungai254.cloudflareaccess.com",
-        "POLICY_AUD": "c0438e5bc62d909fe7cb6f3461278ba1c85f95e4f7c5ab84db8ddab90cc9c05a"
-      }
-    },
-    "production": {
-      "vars": {
-        "ENVIRONMENT": "production"
-      }
-    }
-  }
+	"name": "cloudflare-astro-hono-waitlist",
+	"main": "src/server/index.ts",
+	"compatibility_date": "2025-11-22",
+	"assets": {
+		"directory": "./dist",
+		"binding": "ASSESTS"
+	},
+  "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "cloudflaremaster_local_db",
+          "database_id": "1234"
+        }
+  ],
+	"env": {
+		"staging": {
+			"vars": {
+				"ENVIRONMENT": "staging",
+				"CF_ACCESS_DOMAIN": "https://bryanmungai254.cloudflareaccess.com",
+				"POLICY_AUD": "c0438e5bc62d909fe7cb6f3461278ba1c85f95e4f7c5ab84db8ddab90cc9c05a"
+			},
+            "d1_databases": [
+             {
+               "binding": "DB",
+               "database_name": "cloudflaremaster_staging_db",
+               "database_id": "bbc0fc05-ac8f-4531-aa32-ae29ee4ccf17"
+             }
+            ]
+		},
+		"production": {
+			"vars": {
+				"ENVIRONMENT": "production"
+			}
+		}
+	}
 }
