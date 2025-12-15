@@ -10,7 +10,8 @@
         {
           "binding": "DB",
           "database_name": "cloudflaremaster_local_db",
-          "database_id": "1234"
+          "database_id": "1234",
+		  "migrations_dir": "./src/server/db/migrations"
         }
   ],
 	"env": {
@@ -24,7 +25,8 @@
              {
                "binding": "DB",
                "database_name": "cloudflaremaster_staging_db",
-               "database_id": "bbc0fc05-ac8f-4531-aa32-ae29ee4ccf17"
+               "database_id": "bbc0fc05-ac8f-4531-aa32-ae29ee4ccf17",
+			   "migrations_dir": "./src/server/db/migrations"
              }
             ]
 		},
