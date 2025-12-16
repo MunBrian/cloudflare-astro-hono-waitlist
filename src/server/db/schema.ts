@@ -17,4 +17,4 @@ export const subscribers = sqliteTable('subscribers', {
     check('email', sql`${table.email} LIKE '%@%.%'`)
 ])
 
-export type NewSubsriber = typeof subscribers.$inferInsert;
+export type NewSubscriber = typeof subscribers.$inferInsert;
