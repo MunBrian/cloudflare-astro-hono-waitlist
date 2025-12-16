@@ -49,3 +49,15 @@ it("throws an error when inserting duplicate emails to db", async() => {
 
     expect(insertSubscriber({} as D1Database, newSub )).rejects.toThrow()
 })
+
+
+it("throws an error when inserting an invalid email", async() => {
+    //create a subscriber
+    const newSub: NewSubscriber = {
+        email: 'test123test.com' 
+    }
+
+    await insertSubscriber({} as D1Database, newSub )
+
+    expect(insertSubscriber({} as D1Database, newSub )).rejects.toThrow()
+})
